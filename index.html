@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Peddy - Pet Adoption Platform</title>
-    <!-- Favicons -->
-    <link href="./images/logo.webp" rel="icon" />
-    <!-- main css link  -->
-    <link rel="stylesheet" href="./dist/output.css" />
-    <!-- =============================================
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peddy - Pet Adoption Platform</title>
+  <!-- Favicons -->
+  <link href="./images/logo.webp" rel="icon" />
+  <!-- main css link  -->
+  <link rel="stylesheet" href="./dist/output.css" />
+  <!-- =============================================
     * Template Name: Peddy - Pet Adoption Platform
     * Author: Md. Monirul Islam
     * Email: mrmonir0558@gmail.com
@@ -17,375 +18,399 @@
     ** Run for build: npm run build
     ** Then, Open With live server.
     =============================================== -->
-  </head>
-  <>
-    <!-- navbar  -->
-    <nav class="max-w-7xl mx-auto px-3">
-      <div class="navbar bg-base-100">
-        <div class="navbar-start">
-          <!-- dropdown bars -->
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabindex="0"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg opacity-85"
-            >
-              <li><a>Home</a></li>
-              <li><a>Shop</a></li>
-              <li><a>Contact</a></li>
-            </ul>
+</head>
+<>
+  <!-- navbar  -->
+  <nav class="max-w-7xl mx-auto px-3">
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <!-- dropdown bars -->
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
           </div>
-
-          <!-- logo -->
-          <div class="flex items-center">
-            <img src="./images/logo.webp" alt="" />
-            <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
-          </div>
-        </div>
-
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal px-1 text-lg text-gray-500">
+          <ul tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg opacity-85">
             <li><a>Home</a></li>
             <li><a>Shop</a></li>
             <li><a>Contact</a></li>
           </ul>
         </div>
-        <div class="navbar-end">
-          <a class="btn rounded-full"><i class="fa-regular fa-user"></i></a>
+
+        <!-- logo -->
+        <div class="flex items-center">
+          <img src="./images/logo.webp" alt="" />
+          <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
         </div>
       </div>
-    </nav>
 
-    <!-- main  -->
-    <main class="max-w-7xl mx-auto mt-6 px-3">
-      <!-- hero section  -->
-      <section class="hero">
-        <div
-          class="flex flex-col justify-center items-center text-center gap-10"
-        >
-          <!-- text-content  -->
-          <div class="max-w-md">
-            <p class="opacity-85">Bringing Families Together ❤️‍🔥</p>
-            <h1 class="text-4xl font-extrabold mt-2">
-              Your Path to Adoption Starts Here
-            </h1>
-            <p class="py-6">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a.
-            </p>
-            <button class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white">
-              View More
-            </button>
-          </div>
-          <!-- hero img -->
-          <div class="max-w-[802px]">
-            <img class="w-full object-cover" src="./images/pet.webp" alt="" />
-          </div>
-        </div>
-      </section>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 text-lg text-gray-500">
+          <li><a>Home</a></li>
+          <li><a>Shop</a></li>
+          <li><a>Contact</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a class="btn rounded-full"><i class="fa-regular fa-user"></i></a>
+      </div>
+    </div>
+  </nav>
 
-      <!-- best friend section  -->
-      <section class="pt-20">
-        <div class="flex flex-col items-center text-center">
-          <div class="max-w-lg">
-            <h1 class="text-3xl font-extrabold mt-2">Adopt Your Best Friend</h1>
-            <p class="py-6">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a.
-            </p>
-          </div>
-        </div>
-
-        <!-- btn container  -->
-        <div
-          class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 lg:gap-6"
-        >
-          <!-- btn-1 -->
-          <div
-            class="border inline-block px-16 py-4 rounded-xl hover:rounded-full border-[#bae8ec] hover:border-[#0E7A81] text-xl hover:bg-[#d9e8eb] hover:bg-transparent transition-all"
-          >
-            <a class="flex justify-center items-center gap-4" href="">
-              <img src="./images/shiba 1.png" alt="" />
-              <p>Dogs</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- main card section -->
-      <section class="pt-10">
-        <div class="flex justify-between items-center">
-          <h4 class="text-md font-extrabold">Best Deal for you</h4>
-          <!-- sort btn  -->
-          <button
-            id="sort-btn"
-            class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white px-6"
-          >
-            Sort By Price
+  <!-- main  -->
+  <main class="max-w-7xl mx-auto mt-6 px-3">
+    <!-- hero section  -->
+    <section class="hero">
+      <div class="flex flex-col justify-center items-center text-center gap-10">
+        <!-- text-content  -->
+        <div class="max-w-md">
+          <p class="opacity-85">Bringing Families Together ❤️‍🔥</p>
+          <h1 class="text-4xl font-extrabold mt-2">
+            Your Path to Adoption Starts Here
+          </h1>
+          <p class="py-6">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The
+            point of using Lorem Ipsum is that it has a.
+          </p>
+          <button class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white">
+            <a href="#adopt">View More</a>
           </button>
         </div>
-
-        <!-- card section  -->
-        <div class="flex flex-col items-start lg:flex-row gap-6 mt-10">
-          <div
-            class="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full"
-          >
-            <!-- card-1  -->
-            <div class="card bg-base-100 shadow-xl p-6 border">
-              <figure class="">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                  class="rounded-xl"
-                />
-              </figure>
-
-              <div class="pt-4 space-y-2">
-                <h3 class="card-title font-bold">Mister Tartosh</h3>
-
-                <div class="border-b pb-4 space-y-2">
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/breed.png" alt="" />
-                    <p>Breed: Golder Retriver</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/birth.png" alt="" />
-                    <p>Birth: 2024</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/gender.png" alt="" />
-                    <p>Gender: Female</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/dolor.png" alt="" />
-                    <p>Price: 199$</p>
-                  </div>
-                </div>
-
-                <!-- btn  -->
-                <div class="grid grid-cols-3 gap-4 px-4 pt-2">
-                  <button
-                    class="btn text-lg p-2 border-slate-300 hover:border-slate-300"
-                  >
-                    <i class="fa-regular fa-thumbs-up"></i>
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-400"
-                  >
-                    Adopt
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-300"
-                  >
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- card-2  -->
-            <div class="card bg-base-100 shadow-xl p-6 border">
-              <figure class="">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                  class="rounded-xl"
-                />
-              </figure>
-
-              <div class="pt-4 space-y-2">
-                <h3 class="card-title font-bold">Mister Tartosh</h3>
-
-                <div class="border-b pb-4 space-y-2">
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/breed.png" alt="" />
-                    <p>Breed: Golder Retriver</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/birth.png" alt="" />
-                    <p>Birth: 2024</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/gender.png" alt="" />
-                    <p>Gender: Female</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/dolor.png" alt="" />
-                    <p>Price: 199$</p>
-                  </div>
-                </div>
-
-                <!-- btn  -->
-                <div class="grid grid-cols-3 gap-4 px-4 pt-2">
-                  <button
-                    class="btn text-lg p-2 border-slate-300 hover:border-slate-300"
-                  >
-                    <i class="fa-regular fa-thumbs-up"></i>
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-400"
-                  >
-                    Adopt
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-300"
-                  >
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <!-- card-3  -->
-            <div class="card bg-base-100 shadow-xl p-6 border">
-              <figure class="">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                  alt="Shoes"
-                  class="rounded-xl"
-                />
-              </figure>
-
-              <div class="pt-4 space-y-2">
-                <h3 class="card-title font-bold">Mister Tartosh</h3>
-
-                <div class="border-b pb-4 space-y-2">
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/breed.png" alt="" />
-                    <p>Breed: Golder Retriver</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/birth.png" alt="" />
-                    <p>Birth: 2024</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/gender.png" alt="" />
-                    <p>Gender: Female</p>
-                  </div>
-                  <div class="flex items-center gap-2 text-gray-500">
-                    <img src="./images/dolor.png" alt="" />
-                    <p>Price: 199$</p>
-                  </div>
-                </div>
-
-                <!-- btn  -->
-                <div class="grid grid-cols-3 gap-4 px-4 pt-2">
-                  <button
-                    class="btn text-lg p-2 border-slate-300 hover:border-slate-300"
-                  >
-                    <i class="fa-regular fa-thumbs-up"></i>
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-400"
-                  >
-                    Adopt
-                  </button>
-                  <button
-                    class="btn text-md border-slate-300 hover:border-slate-300"
-                  >
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="w-full lg:w-3/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-6 p-6 border shadow-xl rounded-xl"
-          >
-            <!-- img-1  -->
-            <div>
-              <img class="h-full w-full" src="./images/dogi.png" alt="" />
-            </div>
-
-            <!-- img-2  -->
-            <div>
-              <img class="h-full w-full" src="./images/dogi.png" alt="" />
-            </div>
-          </div>
+        <!-- hero img -->
+        <div class="max-w-[802px]">
+          <img class="w-full object-cover" src="./images/pet.webp" alt="" />
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
+    <!-- best friend section  -->
+    <section id="adopt" class="pt-20">
+      <div class="flex flex-col items-center text-center">
+        <div class="max-w-lg">
+          <h1 class="text-3xl font-extrabold mt-2">Adopt Your Best Friend</h1>
+          <p class="py-6">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The
+            point of using Lorem Ipsum is that it has a.
+          </p>
+        </div>
+      </div>
 
-    
-
-    <!-- footer  -->
-
-    <div class=" bg-black text-white mt-20 px-3 py-20">
-      <footer class="footer p-10 max-w-7xl mx-auto flex justify-between items-start">
-  <nav>
-          <div>
-           <a class="">
-            <div class="flex items-center">
-            <img src="./images/logo.webp" alt="" />
-            <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
-          </div>
+      <!-- btn container  -->
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
+        <!-- btn-1 -->
+        <div
+          class="border inline-block px-16 py-4 rounded-xl hover:rounded-full border-[#bae8ec] hover:border-[#0E7A81] text-xl hover:bg-[#d9e8eb] hover:bg-transparent transition-all">
+          <a class="flex justify-center items-center gap-4" href="">
+            <img src="./images/shiba 1.png" alt="" />
+            <p>Dogs</p>
           </a>
         </div>
-          <div class="text-lg text-gray-400 space-y-2" >
-            <p>Location: av. Washington 165, NY CA 54003</p>
+      </div>
+    </section>
+
+    <!-- main card section -->
+    <section class="pt-10">
+      <div class="flex justify-between items-center">
+        <h4 class="text-md font-extrabold">Best Deal for you</h4>
+        <!-- sort btn  -->
+        <button id="sort-btn" class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white px-6">
+          Sort By Price
+        </button>
+      </div>
+
+      <!-- spinner  -->
+      <div class=" hidden flex justify-center py-20">
+        <span class="loading loading-bars loading-xs"></span>
+        <span class="loading loading-bars loading-sm"></span>
+        <span class="loading loading-bars loading-md"></span>
+        <span class="loading loading-bars loading-lg"></span>
+      </div>
+
+      <!-- card section  -->
+      <div class="flex flex-col items-start lg:flex-row gap-6 mt-10">
+        <div class="w-full relative  lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+
+          <!-- no information avilable  -->
+          <div class=" hidden w-full absolute top-0 left-0 bg-[#F8F8F8] md:p-20 rounded-2xl z-10 shadow-xl border">
+            <div class="flex flex-col justify-center items-center text-center gap-6 my-10">
+              <div>
+                <img class="w-full" src="./images/error.webp" alt="error img">
+              </div>
+              <h2 class="text-2xl font-extrabold">No Information Available</h2>
+              <p class="text-lg">It is a long established fact that a reader will be distracted by the readable content
+                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            </div>
+          </div>
+
+
+          <!-- card-1  -->
+          <div class="card bg-base-100 shadow-xl p-6 border">
+            <figure class="">
+              <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"
+                class="rounded-xl" />
+            </figure>
+
+            <div class="pt-4 space-y-2">
+              <h3 class="card-title font-bold">Mister Tartosh</h3>
+
+              <div class="border-b pb-4 space-y-2">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/breed.png" alt="" />
+                  <p>Breed: Golder Retriver</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/birth.png" alt="" />
+                  <p>Birth: 2024</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/gender.png" alt="" />
+                  <p>Gender: Female</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/dolor.png" alt="" />
+                  <p>Price: 199$</p>
+                </div>
+              </div>
+
+              <!-- btn  -->
+              <div class="grid grid-cols-3 gap-4 px-4 pt-2">
+                <button class="btn text-lg p-2 border-slate-300 hover:border-slate-300">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-400">
+                  Adopt
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-300">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- card-2  -->
+          <div class="card bg-base-100 shadow-xl p-6 border">
+            <figure class="">
+              <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"
+                class="rounded-xl" />
+            </figure>
+
+            <div class="pt-4 space-y-2">
+              <h3 class="card-title font-bold">Mister Tartosh</h3>
+
+              <div class="border-b pb-4 space-y-2">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/breed.png" alt="" />
+                  <p>Breed: Golder Retriver</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/birth.png" alt="" />
+                  <p>Birth: 2024</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/gender.png" alt="" />
+                  <p>Gender: Female</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/dolor.png" alt="" />
+                  <p>Price: 199$</p>
+                </div>
+              </div>
+
+              <!-- btn  -->
+              <div class="grid grid-cols-3 gap-4 px-4 pt-2">
+                <button class="btn text-lg p-2 border-slate-300 hover:border-slate-300">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-400">
+                  Adopt
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-300">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- card-3  -->
+          <div class="card bg-base-100 shadow-xl p-6 border">
+            <figure class="">
+              <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"
+                class="rounded-xl" />
+            </figure>
+
+            <div class="pt-4 space-y-2">
+              <h3 class="card-title font-bold">Mister Tartosh</h3>
+
+              <div class="border-b pb-4 space-y-2">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/breed.png" alt="" />
+                  <p>Breed: Golder Retriver</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/birth.png" alt="" />
+                  <p>Birth: 2024</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/gender.png" alt="" />
+                  <p>Gender: Female</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/dolor.png" alt="" />
+                  <p>Price: 199$</p>
+                </div>
+              </div>
+
+              <!-- btn  -->
+              <div class="grid grid-cols-3 gap-4 px-4 pt-2">
+                <button class="btn text-lg p-2 border-slate-300 hover:border-slate-300">
+                  <i class="fa-regular fa-thumbs-up"></i>
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-400">
+                  Adopt
+                </button>
+                <button class="btn text-md border-slate-300 hover:border-slate-300">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Add img container -->
+        <div
+          class="w-full lg:w-3/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-6 p-6 border shadow-xl rounded-xl">
+          <!-- img-1  -->
+          <div>
+            <img class="h-full w-full" src="./images/dogi.png" alt="" />
+          </div>
+
+          <!-- img-2  -->
+          <div>
+            <img class="h-full w-full" src="./images/dogi.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Open the modal using ID.showModal() method -->
+
+      <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+      
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <!-- design -->
+          <div class="card bg-base-100">
+            <figure>
+              <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"
+                class="rounded-xl" />
+            </figure>
+            <div class="pt-4 space-y-2">
+              <h3 class="card-title font-bold">Mister Tartosh</h3>
+
+              <div class=" pb-4 space-y-2">
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/breed.png" alt="" />
+                  <p>Breed: Golder Retriver</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/birth.png" alt="" />
+                  <p>Birth: 2024</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/gender.png" alt="" />
+                  <p>Gender: Female</p>
+                </div>
+                <div class="flex items-center gap-2 text-gray-500">
+                  <img src="./images/dolor.png" alt="" />
+                  <p>Price: 199$</p>
+                </div>
+
+                <div class="mt-4">
+                  <h3 class="font-bold text-xl mb-2">Details Information</h3>
+                  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
+                  layout.
+                  The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn w-full">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+    </section>
+  </main>
+
+
+
+
+
+  <!-- footer  -->
+
+  <div class=" bg-black text-white mt-20 px-3 py-20">
+    <footer class="footer p-10 max-w-7xl mx-auto lg:flex lg:justify-between items-start gap-10">
+      <nav>
+        <div>
+          <a class="">
+            <div class="flex items-center">
+              <img src="./images/logo.webp" alt="" />
+              <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
+            </div>
+          </a>
+        </div>
+        <div class="text-lg text-gray-400 space-y-2">
+          <p>Location: av. Washington 165, NY CA 54003</p>
           <p>Phone: +31 85 964 47 25</p>
           <p>Email: info@yourdomain.com</p>
           <p>Openings hours: 9.00 AM - 5.00 PM</p>
-          </div>
-          <div class="flex gap-10 mt-4">
-            <a class="link link-hover"><img src="./images/facebook.png" alt=""></a>
-            <a class="link link-hover"><img src="./images/x-2 1.png" alt=""></a>
-            <a class="link link-hover"><img src="./images/Youtube.png" alt=""></a>
-            <a class="link link-hover"><img src="./images/insta.png" alt=""></a>
-          </div>
-  </nav>
-  <nav class="text-gray-400 text-lg">
-    <h6 class="footer-title text-xl">Useful Links</h6>
-    <a class="link link-hover">Home</a>
-    <a class="link link-hover">About Us</a>
-    <a class="link link-hover">Animals</a>
-    <a class="link link-hover">Foundation</a>
-    <a class="link link-hover">Contact</a>
-  </nav>
-  
-  <form class="text-gray-400 text-lg">
-    <h6 class="footer-title text-xl">Drop a Message</h6>
-    <fieldset class="form-control w-80">
-      <label class="label">
-    
-      </label>
-      <div class=" space-y-4">
-        <div>
-          <input
-          type="text"
-          placeholder="username@site.com"
-          class="input input-bordered join-item w-full" />
         </div>
-        <button class="btn text-lg bg-[#0E7A81] border-[#0E7A81] text-white hover:text-black join-item w-full">Subscribe</button>
-      </div>
-    </fieldset>
-  </form>
-</footer>
-    </div>
+        <div class="flex gap-10 mt-4">
+          <a class="link link-hover"><img src="./images/facebook.png" alt=""></a>
+          <a class="link link-hover"><img src="./images/x-2 1.png" alt=""></a>
+          <a class="link link-hover"><img src="./images/Youtube.png" alt=""></a>
+          <a class="link link-hover"><img src="./images/insta.png" alt=""></a>
+        </div>
+      </nav>
+      <nav class="text-gray-400 text-lg">
+        <h6 class="footer-title text-xl">Useful Links</h6>
+        <a class="link link-hover">Home</a>
+        <a class="link link-hover">About Us</a>
+        <a class="link link-hover">Animals</a>
+        <a class="link link-hover">Foundation</a>
+        <a class="link link-hover">Contact</a>
+      </nav>
 
-    <script src="./js/script.js"></script>
-    <script
-      src="https://kit.fontawesome.com/340c0de332.js"
-      crossorigin="anonymous"
-    ></script>
+      <form class="text-gray-400 text-lg">
+        <h6 class="footer-title text-xl">Drop a Message</h6>
+        <fieldset class="form-control w-80">
+          <label class="label">
+
+          </label>
+          <div class=" space-y-4">
+            <div>
+              <input type="text" placeholder="username@site.com" class="input input-bordered join-item w-full" />
+            </div>
+            <button
+              class="btn text-lg bg-[#0E7A81] border-[#0E7A81] text-white hover:text-black join-item w-full">Subscribe</button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+  </div>
+
+  <script src="./js/script.js"></script>
+  <script src="https://kit.fontawesome.com/340c0de332.js" crossorigin="anonymous"></script>
   </body>
+
 </html>
