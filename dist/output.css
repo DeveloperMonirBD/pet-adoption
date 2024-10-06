@@ -2098,10 +2098,6 @@ body{
   margin-top: 1.5rem;
 }
 
-.inline-block{
-  display: inline-block;
-}
-
 .flex{
   display: flex;
 }
@@ -2247,11 +2243,6 @@ body{
   border-color: rgb(14 122 129 / var(--tw-border-opacity));
 }
 
-.border-\[\#bae8ec\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(186 232 236 / var(--tw-border-opacity));
-}
-
 .border-slate-300{
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
@@ -2277,10 +2268,6 @@ body{
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.bg-none{
-  background-image: none;
-}
-
 .object-cover{
   -o-object-fit: cover;
      object-fit: cover;
@@ -2303,11 +2290,6 @@ body{
   padding-right: 0.25rem;
 }
 
-.px-16{
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2323,29 +2305,19 @@ body{
   padding-right: 1.5rem;
 }
 
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .py-20{
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-0{
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.py-10{
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .pb-4{
@@ -2436,21 +2408,6 @@ body{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.transition-all{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.hover\:rounded-full:hover{
-  border-radius: 9999px;
-}
-
-.hover\:border-\[\#0E7A81\]:hover{
-  --tw-border-opacity: 1;
-  border-color: rgb(14 122 129 / var(--tw-border-opacity));
-}
-
 .hover\:border-slate-300:hover{
   --tw-border-opacity: 1;
   border-color: rgb(203 213 225 / var(--tw-border-opacity));
@@ -2464,15 +2421,6 @@ body{
 .hover\:bg-\[\#0d7077\]:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(13 112 119 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-\[\#d9e8eb\]:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(217 232 235 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-transparent:hover{
-  background-color: transparent;
 }
 
 .hover\:text-black:hover{
@@ -2501,10 +2449,6 @@ body{
 @media (min-width: 1024px){
   .lg\:flex{
     display: flex;
-  }
-
-  .lg\:grid{
-    display: grid;
   }
 
   .lg\:hidden{
