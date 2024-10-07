@@ -1,52 +1,45 @@
-<dialog id="customModal" class="modal">
-  <div class="modal-box">
-    <div id="modal-content">
-      <div class="card bg-base-100">
-        <figure>
-          <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes"
-            class="rounded-xl" />
-        </figure>
-        <div class="pt-4 space-y-2">
-          <h3 class="card-title font-bold">Mister Tartosh</h3>
-      
-          <div class=" pb-4 space-y-2">
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/breed.png" alt="" />
-              <p>Breed: Golder Retriver</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/birth.png" alt="" />
-              <p>Birth: 2024</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/gender.png" alt="" />
-              <p>Gender: Female</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/dolor.png" alt="" />
-              <p>Price: 199$</p>
-            </div>
-      
-            <div class="mt-4">
-              <h3 class="font-bold text-xl mb-2">Details Information</h3>
-              <p>It is a long established fact that a reader will be distracted by the readable content of
-                a page when
-                looking at its
-                layout.
-                The point of using is that it has a more-or-less normal distribution of letters, as
-                opposed to using.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Card</title>
+    <style>
+        .card {
+            width: 200px;
+            height: 100px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            transition: opacity 0.5s ease;
+        }
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="countdown-card" class="card">3</div>
 
-    <div class="modal-action">
-      <form method="dialog">
+    <script>
+        let countdownValue = 3;
+        const countdownElement = document.getElementById('countdown-card');
 
-        <button class="btn w-full">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+        const countdown = setInterval(() => {
+            countdownValue--;
+            countdownElement.textContent = countdownValue;
+
+            if (countdownValue <= 0) {
+                clearInterval(countdown);
+                countdownElement.textContent = "Go!";
+                setTimeout(() => {
+                    countdownElement.classList.add('hidden');
+                }, 1000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

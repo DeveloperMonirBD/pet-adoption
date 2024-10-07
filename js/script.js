@@ -1,4 +1,3 @@
-
 // **load 4pets btn fetch
 const leadCategoriesBtn = async () => {
     try {
@@ -10,7 +9,7 @@ const leadCategoriesBtn = async () => {
     }
 };
 
- // ** remove active class
+// ** remove active class
 const removeActiveClass = () => {
     const buttons = document.getElementsByClassName('category-btn');
     for (let btn of buttons) {
@@ -19,23 +18,21 @@ const removeActiveClass = () => {
 };
 
 // ** load pets btn functionality
-const loadCategoryPets = (id) => {
+const loadCategoryPets = id => {
     // alert(id)
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
         .then(res => res.json())
-      .then(data => {
-        // active class remove 
-        removeActiveClass();
+        .then(data => {
+            // active class remove
+            removeActiveClass();
 
-        // active class add
-        const activeBtn = document.getElementById(`btn-${id}`)
-        activeBtn.classList.add("active")
-          displayAllPets(data.data);
+            // active class add
+            const activeBtn = document.getElementById(`btn-${id}`);
+            activeBtn.classList.add('active');
+            displayAllPets(data.data);
         })
         .catch(error => console.log(error));
 };
-
-
 
 // **load 4pets btn display
 const displayCategoriesBtn = items => {
@@ -71,28 +68,28 @@ const loadAllPets = async () => {
 };
 
 // ** load details
-const loadDetails = async(petId) => {
-  console.log(petId);
-  const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  displayDetails(data.petData);
+const loadDetails = async petId => {
+    console.log(petId);
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayDetails(data.petData);
 };
 
-// ** display details 
-const displayDetails = (petItem) => {
-  const detailsContainer = document.getElementById('modal-content');
+// ** display details
+const displayDetails = petItem => {
+    const detailsContainer = document.getElementById('modal-content');
 
-  const { petId, pet_details, image, category, breed, date_of_birth, gender, price } = petItem;
+    const { petId, pet_name, pet_details, image, category, breed, date_of_birth, gender, price } = petItem;
 
-  detailsContainer.innerHTML = `
+    detailsContainer.innerHTML = `
     <div class="card bg-base-100">
         <figure>
           <img class="w-full" src=${image}
             class="rounded-xl" />
         </figure>
         <div class="pt-4 space-y-2">
-          <h3 class="card-title font-bold">${category ? category : 'Data not found'}</h3>
+          <h3 class="card-title font-bold">${pet_name ? pet_name : 'Data not found'}</h3>
 
           <div class=" pb-4 space-y-2">
             <div class="flex items-center gap-2 text-gray-500">
@@ -120,18 +117,36 @@ const displayDetails = (petItem) => {
         </div>
       </div>
   `;
-  document.getElementById('customModal').showModal();
-}
+    document.getElementById('customModal').showModal();
+};
 
+// ** load images
+const loadCategoryImg = async petId => {
+    console.log(petId);
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayPhotos(data.petData);
+};
 
-
+// ** display photos
+const displayPhotos = petImg => {
+  const imageContainer = document.getElementById('petImageContainer');
+  const imgDiv = document.createElement('div');
+    imgDiv.innerHTML = `
+    <div class="h-[90px] ">
+          <img class="h-full w-full rounded-md object-cover" src=${petImg.image} alt="" />
+        </div>
+  `;
+  imageContainer.appendChild(imgDiv);
+};
 
 // ** display all pets
 const displayAllPets = pets => {
-  const cardContainer = document.getElementById('card-container');
-  cardContainer.innerHTML = '';
-  if (pets.length === 0) {
-    cardContainer.innerHTML = `
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML = '';
+    if (pets.length === 0) {
+        cardContainer.innerHTML = `
     <div class= "min-h-screen">
     <div class="w-full absolute top-0 left-0 bg-[#F8F8F8] md:p-20 rounded-2xl z-10 shadow-xl border">
           <div class="flex flex-col justify-center items-center text-center gap-6 my-10">
@@ -145,10 +160,10 @@ const displayAllPets = pets => {
         </div>
     </div>
     `;
-    return
-  }
+        return;
+    }
     pets.forEach(pet => {
-        const {petId, pet_details, image, category, breed, date_of_birth, gender, price } = pet;
+        const { petId, pet_name, pet_details, image, category, breed, date_of_birth, gender, price } = pet;
         const petDiv = document.createElement('div');
         petDiv.innerHTML = `
         <div class="card bg-base-100 shadow-xl p-6 border">
@@ -158,7 +173,7 @@ const displayAllPets = pets => {
           </figure>
 
           <div class="pt-4 space-y-2">
-            <h3 class="card-title font-bold">${category ? category : 'Data not found'}</h3>
+            <h3 class="card-title font-bold">${pet_name ? pet_name : 'Data not found'}</h3>
 
             <div class="border-b pb-4 space-y-2">
               <div class="flex items-center gap-2 text-gray-500">
@@ -181,15 +196,15 @@ const displayAllPets = pets => {
 
       
             <div class="grid grid-cols-3 gap-4 px-4 pt-2">
-              <button class="btn text-md border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
+              <button onclick="loadCategoryImg(${petId})" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
 
-              <button class="btn text-md border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
+              <button onclick="alert('Congrats!! adopion process is start for your pet')" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
                 Adopt
               </button>
 
-              <button class="btn text-md border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all"
+              <button class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all"
                 onclick="loadDetails(${petId})">Details</button>
             </div>
           </div>
