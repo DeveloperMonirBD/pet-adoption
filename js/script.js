@@ -9,6 +9,7 @@ const leadCategoriesBtn = async () => {
     }
 };
 
+// ** load pets btn functionality
 const loadCategoryPets = (id) => {
     // alert(id)
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
@@ -17,7 +18,18 @@ const loadCategoryPets = (id) => {
         .catch(error => console.log(error));
 };
 
-// **load 4pets btn functionality
+// ** spinner not working------------
+const handleSearch = () => {
+    const spinner = document.getElementById('spinner');
+    spinner.style.display = 'block';
+    spinner.style.display = 'flex';
+
+    setTimeout(function () {
+        loadCategoryPets();
+    }, 3000);
+};
+
+// **load 4pets btn display
 const displayCategoriesBtn = items => {
     const petsBtn = document.getElementById('petBtn');
     items.forEach(item => {
@@ -53,6 +65,25 @@ const loadAllPets = async () => {
 const displayAllPets = pets => {
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = '';
+
+  if (pets.length === 0) {
+    cardContainer.innerHTML = `
+    <div class= "h-screen">
+    <div class="w-full absolute top-0 left-0 bg-[#F8F8F8] md:p-20 rounded-2xl z-10 shadow-xl border">
+          <div class="flex flex-col justify-center items-center text-center gap-6 my-10">
+            <div>
+              <img class="w-full" src="./images/error.webp" alt="error img">
+            </div>
+            <h2 class="text-2xl font-extrabold">No Information Available</h2>
+            <p class="text-lg">It is a long established fact that a reader will be distracted by the readable content
+              of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+          </div>
+        </div>
+    </div>
+    `;
+    return
+  }
+
     pets.forEach(pet => {
         const { image, category, breed, date_of_birth, gender, price } = pet;
         const petDiv = document.createElement('div');
