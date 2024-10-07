@@ -8,10 +8,10 @@
   <!-- Favicons -->
   <link href="./images/logo.webp" rel="icon" />
   <!-- main css link  -->
-  <link rel="stylesheet" href="./dist/output.css" />
+  <link rel="stylesheet" href="./style.css" />
   <!-- tailwind $ daisyUI cdn link  -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <!-- navbar  -->
 <nav class="max-w-7xl mx-auto px-3">
@@ -95,7 +95,7 @@
     <!-- btn container  -->
     <div id="petBtn" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
       <!-- Pets btn here -->
-      
+
     </div>
   </section>
 
@@ -122,8 +122,8 @@
       <div id="card-container" class="w-full relative  lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
 
         <!-- no information avilable  -->
-        
-        
+
+
         <!-- show card-1  -->
 
       </div>
@@ -144,6 +144,23 @@
     </div>
   </section>
 </main>
+
+<!-- modal  -->
+<dialog id="customModal" class="modal">
+  <div class="modal-box">
+    <div id="modal-content">
+
+
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <button
+          class="btn border-[#0E7A81] hover:border-[#bae8ec] bg-gray-200 hover:bg-[#bae8ec] hover:text-black text-lg">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
 
 <!-- footer  -->
 <div class=" bg-black text-white mt-20 px-3 py-20">
