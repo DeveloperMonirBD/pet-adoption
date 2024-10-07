@@ -19,7 +19,6 @@ const removeActiveClass = () => {
 
 // ** load pets btn functionality
 const loadCategoryPets = id => {
-    // alert(id)
     fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
         .then(res => res.json())
         .then(data => {
@@ -29,9 +28,22 @@ const loadCategoryPets = id => {
             // active class add
             const activeBtn = document.getElementById(`btn-${id}`);
             activeBtn.classList.add('active');
+
             displayAllPets(data.data);
         })
         .catch(error => console.log(error));
+};
+
+// spinner
+const handleSearch = category => {
+    const spinnerContainer = document.getElementById('spinnerContainer');
+    spinnerContainer.style.display = 'flex';
+    document.getElementById('card-container').innerHTML = '';
+
+    setTimeout(function () {
+        spinnerContainer.style.display = 'none';
+        loadCategoryPets(category);
+    }, 2000);
 };
 
 // **load 4pets btn display
@@ -43,7 +55,7 @@ const displayCategoriesBtn = items => {
         buttonContainer.innerHTML = `
     <button
         id = "btn-${category}"
-        onclick="loadCategoryPets('${category}')"
+        onclick="handleSearch('${category}')"
         class="category-btn border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:bg-[#bae8ec] hover:border-[#0E7A81] text-xl font-bold  transition-all">
         <div class="flex justify-center items-center gap-4" href="">
           <img src=${category_icon} alt="" />
@@ -131,14 +143,14 @@ const loadCategoryImg = async petId => {
 
 // ** display photos
 const displayPhotos = petImg => {
-  const imageContainer = document.getElementById('petImageContainer');
-  const imgDiv = document.createElement('div');
+    const imageContainer = document.getElementById('petImageContainer');
+    const imgDiv = document.createElement('div');
     imgDiv.innerHTML = `
     <div class="h-[90px] ">
           <img class="h-full w-full rounded-md object-cover" src=${petImg.image} alt="" />
         </div>
   `;
-  imageContainer.appendChild(imgDiv);
+    imageContainer.appendChild(imgDiv);
 };
 
 // ** display all pets

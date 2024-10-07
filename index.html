@@ -68,9 +68,9 @@
           the readable content of a page when looking at its layout. The
           point of using Lorem Ipsum is that it has a.
         </p>
-        <button class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white">
-          <a href="#adopt">View More</a>
-        </button>
+        <a href="#adopt" class="btn bg-[#0E7A81] hover:bg-[#0d7077] text-white">
+          View More
+        </a>
       </div>
       <!-- hero img -->
       <div class="max-w-[802px]">
@@ -93,7 +93,7 @@
     </div>
 
     <!-- btn container  -->
-    <div id="petBtn" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
+    <div id="petBtn" onclick="handleSearch()" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
       <!-- Pets btn here -->
 
     </div>
@@ -110,7 +110,7 @@
     </div>
 
     <!-- spinner  -->
-    <div id="spinner" class="hidden justify-center py-10">
+    <div id="spinnerContainer" class="hidden justify-center py-10">
       <span class="loading loading-bars loading-xs"></span>
       <span class="loading loading-bars loading-sm"></span>
       <span class="loading loading-bars loading-md"></span>
@@ -129,11 +129,10 @@
       </div>
 
       <!-- Add img container -->
-      <div 
-        id="petImageContainer"
+      <div id="petImageContainer"
         class="w-full lg:w-3/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-6 p-6 border shadow-xl rounded-xl">
         <!-- img add here  -->
-        
+
 
       </div>
     </div>
