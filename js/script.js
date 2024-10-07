@@ -38,7 +38,7 @@ const displayCategoriesBtn = items => {
         buttonContainer.innerHTML = `
     <button
         onclick="loadCategoryPets('${category}')"
-        class="border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:border-[#0E7A81] text-xl hover:bg-[#d9e8eb] hover:bg-transparent transition-all">
+        class="border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:bg-[#bae8ec] hover:border-[#0E7A81] text-xl font-bold  transition-all">
         <div class="flex justify-center items-center gap-4" href="">
           <img src=${category_icon} alt="" />
           <p>${category}</p>
@@ -68,7 +68,7 @@ const displayAllPets = pets => {
 
   if (pets.length === 0) {
     cardContainer.innerHTML = `
-    <div class= "h-screen">
+    <div class= "min-h-screen">
     <div class="w-full absolute top-0 left-0 bg-[#F8F8F8] md:p-20 rounded-2xl z-10 shadow-xl border">
           <div class="flex flex-col justify-center items-center text-center gap-6 my-10">
             <div>
