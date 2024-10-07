@@ -9,14 +9,23 @@ const leadCategoriesBtn = async () => {
     }
 };
 
+const loadCategoryPets = (id) => {
+    // alert(id)
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+        .then(res => res.json())
+        .then(data => displayAllPets(data.data))
+        .catch(error => console.log(error));
+};
+
 // **load 4pets btn functionality
 const displayCategoriesBtn = items => {
     const petsBtn = document.getElementById('petBtn');
     items.forEach(item => {
-        const { category_icon, category } = item;
-        const div = document.createElement('div');
-        div.innerHTML = `
+        const { id, category_icon, category } = item;
+        const buttonContainer = document.createElement('div');
+        buttonContainer.innerHTML = `
     <button
+        onclick="loadCategoryPets('${category}')"
         class="border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:border-[#0E7A81] text-xl hover:bg-[#d9e8eb] hover:bg-transparent transition-all">
         <div class="flex justify-center items-center gap-4" href="">
           <img src=${category_icon} alt="" />
@@ -24,11 +33,12 @@ const displayCategoriesBtn = items => {
         </div>
       </button>
         `;
-        petsBtn.appendChild(div);
+
+        petsBtn.appendChild(buttonContainer);
     });
 };
 
-// ** display all pets 
+// ** display all pets
 const loadAllPets = async () => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
@@ -39,38 +49,39 @@ const loadAllPets = async () => {
     }
 };
 
-// ** display all pets 
+// ** display all pets
 const displayAllPets = pets => {
+  const cardContainer = document.getElementById('card-container');
+  cardContainer.innerHTML = '';
     pets.forEach(pet => {
         const { image, category, breed, date_of_birth, gender, price } = pet;
-        const cardContainer = document.getElementById('card-container');
         const petDiv = document.createElement('div');
         petDiv.innerHTML = `
         <div class="card bg-base-100 shadow-xl p-6 border">
-          <figure class="">
+          <figure class="h-[204px]">
             <img src=${image}
-              class="rounded-xl" />
+              class="h-full w-full object-cover rounded-xl" />
           </figure>
 
           <div class="pt-4 space-y-2">
-            <h3 class="card-title font-bold">${category}</h3>
+            <h3 class="card-title font-bold">${category ? category : 'Data not found'}</h3>
 
             <div class="border-b pb-4 space-y-2">
               <div class="flex items-center gap-2 text-gray-500">
                 <img src="./images/breed.png" alt="" />
-                <p>Breed: ${breed}</p>
+                <p>Breed: ${breed ? breed : 'Data not found'}</p>
               </div>
               <div class="flex items-center gap-2 text-gray-500">
                 <img src="./images/birth.png" alt="" />
-                <p>Birth: ${date_of_birth}</p>
+                <p>Birth: ${date_of_birth ? date_of_birth : 'Data not found'}</p>
               </div>
               <div class="flex items-center gap-2 text-gray-500">
                 <img src="./images/gender.png" alt="" />
-                <p>Gender: ${gender}</p>
+                <p>Gender: ${gender ? gender : 'Data not found'}</p>
               </div>
               <div class="flex items-center gap-2 text-gray-500">
                 <img src="./images/dolor.png" alt="" />
-                <p>Price: ${price}$</p>
+                <p>Price: ${price ? price + '$' : 'Data not found'}</p>
               </div>
             </div>
 
@@ -148,12 +159,5 @@ const displayAllPets = pets => {
     });
 };
 
-
-
-
-loadAllPets();
-
-
-
-
 leadCategoriesBtn();
+loadAllPets();
