@@ -1,3 +1,19 @@
+// ** Adopt Countdown
+const adoptBtn = () => {
+    let count = 3;
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.textContent = count;
+    const countdownInterval = setInterval(() => {
+        count--;
+        countdownElement.textContent = count;
+
+        if (count < 1) {
+            clearInterval(countdownInterval);
+            document.getElementById('my_adopt_modal').checked = false;
+        }
+    }, 1700);
+};
+
 // **load 4pets btn fetch
 const leadCategoriesBtn = async () => {
     try {
@@ -212,9 +228,7 @@ const displayAllPets = pets => {
                 <i class="fa-regular fa-thumbs-up"></i>
               </button>
 
-              <button onclick="alert('Congrats!! adopion process is start for your pet')" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
-                Adopt
-              </button>
+              <label onclick="adoptBtn()" for="my_adopt_modal" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">Adopt</label>
 
               <button class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all"
                 onclick="loadDetails(${petId})">Details</button>
