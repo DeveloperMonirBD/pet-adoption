@@ -14,7 +14,7 @@ const adoptBtn = () => {
     }, 1700);
 };
 
-// **load 4pets btn fetch
+// **load 4 Categories Btn
 const leadCategoriesBtn = async () => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/peddy/categories`);
@@ -25,44 +25,7 @@ const leadCategoriesBtn = async () => {
     }
 };
 
-// ** remove active class
-const removeActiveClass = () => {
-    const buttons = document.getElementsByClassName('category-btn');
-    for (let btn of buttons) {
-        btn.classList.remove('active');
-    }
-};
-
-// ** load pets btn functionality
-const loadCategoryPets = id => {
-    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            // active class remove
-            removeActiveClass();
-
-            // active class add
-            const activeBtn = document.getElementById(`btn-${id}`);
-            activeBtn.classList.add('active');
-
-            displayAllPets(data.data);
-        })
-        .catch(error => console.log(error));
-};
-
-// spinner
-const handleSearch = category => {
-    const spinnerContainer = document.getElementById('spinnerContainer');
-    spinnerContainer.style.display = 'flex';
-    document.getElementById('card-container').innerHTML = '';
-
-    setTimeout(function () {
-        spinnerContainer.style.display = 'none';
-        loadCategoryPets(category);
-    }, 2000);
-};
-
-// **load 4pets btn display
+// ** display 4 Categories Btn
 const displayCategoriesBtn = items => {
     const petsBtn = document.getElementById('petBtn');
     items.forEach(item => {
@@ -71,7 +34,7 @@ const displayCategoriesBtn = items => {
         buttonContainer.innerHTML = `
     <button
         id = "btn-${category}"
-        onclick="handleSearch('${category}')"
+        onclick="searchCategory('${category}')"
         class="category-btn border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:bg-[#bae8ec] hover:border-[#0E7A81] text-xl font-bold  transition-all">
         <div class="flex justify-center items-center gap-4" href="">
           <img src=${category_icon} alt="" />
@@ -84,92 +47,18 @@ const displayCategoriesBtn = items => {
     });
 };
 
-// ** display all pets fetch
+// ** load all pets
 const loadAllPets = async () => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
         const data2 = await response.json();
         setTimeout(() => {
-          spinnerContainer.style.display = 'none';
+            spinnerContainer.style.display = 'none';
             displayAllPets(data2.pets);
         }, 2000);
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-};
-
-// ** load details
-const loadDetails = async petId => {
-    console.log(petId);
-    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayDetails(data.petData);
-};
-
-// ** display details
-const displayDetails = petItem => {
-    const detailsContainer = document.getElementById('modal-content');
-
-    const { petId, pet_name, pet_details, image, category, breed, date_of_birth, gender, price } = petItem;
-
-    detailsContainer.innerHTML = `
-    <div class="card bg-base-100">
-        <figure>
-          <img class="w-full" src=${image}
-            class="rounded-xl" />
-        </figure>
-        <div class="pt-4 space-y-2">
-          <h3 class="card-title font-bold">${pet_name ? pet_name : 'Data not found'}</h3>
-
-          <div class=" pb-4 space-y-2">
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/breed.png" alt="" />
-              <p>Breed: ${breed ? breed : 'Data not found'}</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/birth.png" alt="" />
-              <p>Birth: ${date_of_birth ? date_of_birth : 'Data not found'}</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/gender.png" alt="" />
-              <p>Gender: ${gender ? gender : 'Data not found'}</p>
-            </div>
-            <div class="flex items-center gap-2 text-gray-500">
-              <img src="./images/dolor.png" alt="" />
-              <p>Price: ${price ? price + '$' : 'Data not found'}</p>
-            </div>
-
-            <div class="mt-4">
-              <h3 class="font-bold text-xl mb-2">Details Information</h3>
-              <p>${pet_details ? pet_details : 'Data not found'}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-  `;
-    document.getElementById('customModal').showModal();
-};
-
-// ** load images
-const loadCategoryImg = async petId => {
-    console.log(petId);
-    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayPhotos(data.petData);
-};
-
-// ** display photos
-const displayPhotos = petImg => {
-    const imageContainer = document.getElementById('petImageContainer');
-    const imgDiv = document.createElement('div');
-    imgDiv.innerHTML = `
-    <div class="h-[90px] ">
-          <img class="h-full w-full rounded-md object-cover" src=${petImg.image} alt="" />
-        </div>
-  `;
-    imageContainer.appendChild(imgDiv);
 };
 
 // ** display all pets
@@ -242,6 +131,117 @@ const displayAllPets = pets => {
 
         cardContainer.appendChild(petDiv);
     });
+};
+
+// ** load Category Pets
+const loadCategoryPets = id => {
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            // active class remove
+            removeActiveClass();
+
+            // active class add
+            const activeBtn = document.getElementById(`btn-${id}`);
+            activeBtn.classList.add('active');
+
+            displayAllPets(data.data);
+        })
+        .catch(error => console.log(error));
+};
+
+// ** spinner load in search Category btn
+const searchCategory = category => {
+    const spinnerContainer = document.getElementById('spinnerContainer');
+    spinnerContainer.style.display = 'flex';
+    document.getElementById('card-container').innerHTML = '';
+
+    setTimeout(function () {
+        spinnerContainer.style.display = 'none';
+        loadCategoryPets(category);
+    }, 2000);
+};
+
+// ** remove active class
+const removeActiveClass = () => {
+    const buttons = document.getElementsByClassName('category-btn');
+    for (let btn of buttons) {
+        btn.classList.remove('active');
+    }
+};
+
+// ** load details
+const loadDetails = async petId => {
+    console.log(petId);
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayDetails(data.petData);
+};
+
+// ** display details
+const displayDetails = petItem => {
+    const detailsContainer = document.getElementById('modal-content');
+
+    const { petId, pet_name, pet_details, image, category, breed, date_of_birth, gender, price } = petItem;
+
+    detailsContainer.innerHTML = `
+    <div class="card bg-base-100">
+        <figure>
+          <img class="w-full" src=${image}
+            class="rounded-xl" />
+        </figure>
+        <div class="pt-4 space-y-2">
+          <h3 class="card-title font-bold">${pet_name ? pet_name : 'Data not found'}</h3>
+
+          <div class=" pb-4 space-y-2">
+            <div class="flex items-center gap-2 text-gray-500">
+              <img src="./images/breed.png" alt="" />
+              <p>Breed: ${breed ? breed : 'Data not found'}</p>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+              <img src="./images/birth.png" alt="" />
+              <p>Birth: ${date_of_birth ? date_of_birth : 'Data not found'}</p>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+              <img src="./images/gender.png" alt="" />
+              <p>Gender: ${gender ? gender : 'Data not found'}</p>
+            </div>
+            <div class="flex items-center gap-2 text-gray-500">
+              <img src="./images/dolor.png" alt="" />
+              <p>Price: ${price ? price + '$' : 'Data not found'}</p>
+            </div>
+
+            <div class="mt-4">
+              <h3 class="font-bold text-xl mb-2">Details Information</h3>
+              <p>${pet_details ? pet_details : 'Data not found'}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  `;
+    document.getElementById('customModal').showModal();
+};
+
+// ** load images
+const loadCategoryImg = async petId => {
+    console.log(petId);
+    const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    displayImg(data.petData);
+};
+
+// ** display photos
+const displayImg = petImg => {
+    const imageContainer = document.getElementById('petImageContainer');
+    const imgDiv = document.createElement('div');
+    imgDiv.innerHTML = `
+    <div class="h-[90px] ">
+          <img class="h-full w-full rounded-md object-cover" src=${petImg.image} alt="" />
+        </div>
+  `;
+    imageContainer.appendChild(imgDiv);
 };
 
 leadCategoriesBtn();
