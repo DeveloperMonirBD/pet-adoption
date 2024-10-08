@@ -1,5 +1,5 @@
 .active {
     background-color: #bae8ec;
     border-color: #0e7a81;
-    border-radius: 9999px;
+    border-radius: 9999px !important;
 }

@@ -89,7 +89,10 @@ const loadAllPets = async () => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
         const data2 = await response.json();
-        displayAllPets(data2.pets);
+        setTimeout(() => {
+          spinnerContainer.style.display = 'none';
+            displayAllPets(data2.pets);
+        }, 2000);
     } catch (error) {
         console.error('Error fetching data:', error);
     }
@@ -222,7 +225,6 @@ const displayAllPets = pets => {
               </div>
             </div>
 
-      
             <div class="grid grid-cols-3 gap-4 px-4 pt-2">
               <button onclick="loadCategoryImg(${petId})" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
                 <i class="fa-regular fa-thumbs-up"></i>
