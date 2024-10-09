@@ -1,4 +1,7 @@
 # Peddy - Pet Adoption Platform
+<img class="w-full object-cover" src="./images/pet.webp" alt="img" />
+
+## Welcome to Peddy - Pet Adoption Platform
 
 -   Project name : (Peddy - Pet Adoption Platform)
 
@@ -22,11 +25,11 @@
     -   Rest and Spread Operators
     -   for... of Loop
 
--   Live link to the deployed project: 
+-   Live link to the deployed project: https://peddy-pet-a6.netlify.app
 
 ## What to Submit
 
 -   Your Private Github Repo Link : https://github.com/programming-hero-web-course2/b10a6-pet-adoption-DeveloperMonirBD
 
--   Your Live Link : 
+-   Your Live Link : https://peddy-pet-a6.netlify.app
 
