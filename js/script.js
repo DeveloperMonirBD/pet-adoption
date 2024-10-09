@@ -118,7 +118,7 @@ const displayAllPets = pets => {
 
             <div class="grid grid-cols-3 gap-4 px-4 pt-2">
               <button onclick="loadCategoryImg(${petId})" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">
-                <i class="fa-regular fa-thumbs-up"></i>
+                <a><img src="./images/like.png" alt=""></a>
               </button>
 
               <label onclick="adoptBtn()" for="my_adopt_modal" class="btn text-md text-[#0E7A81] hover:text-black border-[#0E7A81] hover:bg-[#bae8ec] hover:border-[#0E7A81]  transition-all">Adopt</label>
