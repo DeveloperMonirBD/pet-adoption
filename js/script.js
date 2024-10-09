@@ -1,3 +1,5 @@
+let data;
+
 // ** Adopt Countdown
 const adoptBtn = () => {
     let count = 3;
@@ -35,7 +37,7 @@ const displayCategoriesBtn = items => {
     <button
         id = "btn-${category}"
         onclick="searchCategory('${category}')"
-        class="category-btn border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:bg-[#bae8ec] hover:border-[#0E7A81] text-xl font-bold  transition-all">
+        class="category-btn border w-full block lg:inline-block px-16 py-6 rounded-xl hover:rounded-full border-[#bae8ec] hover:bg-[#bae8ec] hover:border-[#0E7A81] text-xl  transition-all">
         <div class="flex justify-center items-center gap-4" href="">
           <img src=${category_icon} alt="" />
           <p>${category}</p>
@@ -51,10 +53,10 @@ const displayCategoriesBtn = items => {
 const loadAllPets = async () => {
     try {
         const response = await fetch(`https://openapi.programming-hero.com/api/peddy/pets`);
-        const data2 = await response.json();
+        data = await response.json();
         setTimeout(() => {
             spinnerContainer.style.display = 'none';
-            displayAllPets(data2.pets);
+            displayAllPets(data.pets);
         }, 2000);
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -131,6 +133,22 @@ const displayAllPets = pets => {
 
         cardContainer.appendChild(petDiv);
     });
+};
+
+// Sort Click function
+const handleSortClick = pets => {
+    const array = data.pets;
+    let sortedArray = array.sort((a, b) => {
+        return b.price - a.price;
+    });
+    const spinnerContainer = document.getElementById('spinnerContainer');
+    spinnerContainer.style.display = 'flex';
+    document.getElementById('card-container').innerHTML = '';
+
+    setTimeout(function () {
+        spinnerContainer.style.display = 'none';
+        displayAllPets(sortedArray);
+    }, 2000);
 };
 
 // ** load Category Pets
@@ -223,7 +241,7 @@ const displayDetails = petItem => {
     document.getElementById('customModal').showModal();
 };
 
-// ** load images
+// ** load images in 2nd img container
 const loadCategoryImg = async petId => {
     console.log(petId);
     const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
@@ -232,7 +250,7 @@ const loadCategoryImg = async petId => {
     displayImg(data.petData);
 };
 
-// ** display photos
+// ** display images in 2nd img container
 const displayImg = petImg => {
     const imageContainer = document.getElementById('petImageContainer');
     const imgDiv = document.createElement('div');
