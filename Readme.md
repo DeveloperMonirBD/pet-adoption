@@ -1,4 +1,5 @@
 # Peddy - Pet Adoption Platform
+<img class="w-full object-cover" src="./images/pet.webp" alt="img" />
 
 -   Project name : (Peddy - Pet Adoption Platform)
 
