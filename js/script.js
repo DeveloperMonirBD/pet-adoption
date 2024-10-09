@@ -255,7 +255,7 @@ const displayImg = petImg => {
     const imageContainer = document.getElementById('petImageContainer');
     const imgDiv = document.createElement('div');
     imgDiv.innerHTML = `
-    <div class="h-[90px] ">
+    <div class="lg:h-[90px] ">
           <img class="h-full w-full rounded-md object-cover" src=${petImg.image} alt="" />
         </div>
   `;

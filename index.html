@@ -18,7 +18,7 @@
 
 </head>
 <!-- navbar  -->
-<nav class="max-w-7xl mx-auto px-3">
+<nav class="max-w-7xl mx-auto px-3 sticky top-0">
   <div class="navbar bg-base-100">
     <div class="navbar-start">
       <!-- dropdown bars -->
@@ -30,24 +30,24 @@
         </div>
         <ul tabindex="0"
           class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg opacity-85">
-          <li><a>Home</a></li>
-          <li><a>Shop</a></li>
-          <li><a>Contact</a></li>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#adopt">Shop</a></li>
+          <li><a href="#footer">Contact</a></li>
         </ul>
       </div>
 
       <!-- logo -->
       <div class="flex items-center">
-        <img src="./images/logo.webp" alt="" />
-        <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
+        <a href="#hero"><img src="./images/logo.webp" alt="logo" /></a>
+        <a href="#hero" class="btn btn-ghost text-2xl font-bold">Peddy</a>
       </div>
     </div>
 
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1 text-lg text-gray-500">
-        <li><a>Home</a></li>
-        <li><a>Shop</a></li>
-        <li><a>Contact</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#adopt">Shop</a></li>
+        <li><a href="#footer">Contact</a></li>
       </ul>
     </div>
     <div class="navbar-end">
@@ -60,7 +60,7 @@
 <main class="max-w-7xl mx-auto mt-6 px-3">
 
   <!-- hero section  -->
-  <section class="hero">
+  <section id="hero" class="hero">
     <div class="flex flex-col justify-center items-center text-center gap-10">
       <!-- text-content  -->
       <div class="max-w-md">
@@ -98,8 +98,7 @@
     </div>
 
     <!-- btn container  -->
-    <div id="petBtn" onclick="handleSearch()"
-      class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
+    <div id="petBtn" class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-4 lg:gap-6">
 
       <!-- Pets btn here -->
 
@@ -124,9 +123,16 @@
       <span class="loading loading-bars loading-lg"></span>
     </div>
 
+    <!-- <div>
+  main parent : flex flex-col items-start lg:flex-row
+
+</div> -->
+
+
     <!-- card section  -->
-    <div class="flex flex-col items-start lg:flex-row gap-6 mt-10">
-      <div id="card-container" class="w-full relative  lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+    <div class="grid grid-cols-12 gap-6 mt-10">
+      <div id="card-container"
+        class="grid col-span-12 md:col-span-12 lg:col-span-9 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full relative">
         <!-- no information avilable  -->
 
         <!-- show card-1  -->
@@ -134,29 +140,17 @@
       </div>
 
       <!-- Add img container -->
-      <div id="petImageContainer"
-        class="w-full lg:w-3/12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-6 p-6 border shadow-xl rounded-xl">
+      <div class="col-span-12 lg:col-span-3 w-full  gap-6 p-6 border shadow-xl rounded-xl ">
         <!-- img add here  -->
+        <div id="petImageContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4">
 
+        </div>
       </div>
+
     </div>
   </section>
 </main>
 
-<!-- modal  -->
-<dialog id="customModal" class="modal">
-  <div class="modal-box">
-    <div id="modal-content">
-
-    </div>
-    <div class="modal-action">
-      <form method="dialog">
-        <button
-          class="btn border-[#0E7A81] hover:border-[#bae8ec] bg-gray-200 hover:bg-[#bae8ec] hover:text-black text-lg">Close</button>
-      </form>
-    </div>
-  </div>
-</dialog>
 
 <!-- adopt button -->
 <input type="checkbox" id="my_adopt_modal" class="modal-toggle" />
@@ -173,15 +167,30 @@
   </div>
 </div>
 
+<!-- details modal  -->
+<dialog id="customModal" class="modal">
+  <div class="modal-box">
+    <div id="modal-content">
+
+    </div>
+    <div class="text-center">
+      <form method="dialog">
+        <button
+          class="bg-gray-200 hover:bg-[#bae8ec] hover:border-[#bae8ec] hover:text-black text-xl w-full py-5 rounded-xl font-bold">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
 <!-- footer  -->
-<div class=" bg-black text-white mt-20 px-3 py-20">
+<div id="footer" class=" bg-black text-white mt-20 px-3 py-20">
   <footer class="footer p-10 max-w-7xl mx-auto lg:flex lg:justify-between items-start gap-10">
     <nav>
       <div>
         <a class="">
           <div class="flex items-center">
-            <img src="./images/logo.webp" alt="" />
-            <a class="btn btn-ghost text-2xl font-bold">Peddy</a>
+            <a href="#hero" href=""><img src="./images/logo.webp" alt="" /></a>
+            <a href="#hero" class="btn btn-ghost text-2xl font-bold">Peddy</a>
           </div>
         </a>
       </div>
@@ -192,19 +201,21 @@
         <p>Openings hours: 9.00 AM - 5.00 PM</p>
       </div>
       <div class="flex gap-10 mt-4">
-        <a class="link link-hover"><img src="./images/facebook.png" alt=""></a>
-        <a class="link link-hover"><img src="./images/x-2 1.png" alt=""></a>
-        <a class="link link-hover"><img src="./images/Youtube.png" alt=""></a>
-        <a class="link link-hover"><img src="./images/insta.png" alt=""></a>
+        <a href="#" class="link link-hover"><img src="./images/facebook.png" alt=""></a>
+        <a href="#" class="link link-hover"><img src="./images/x-2 1.png" alt=""></a>
+        <a href="#" class="link link-hover"><img src="./images/Youtube.png" alt=""></a>
+        <a href="#" class="link link-hover"><img src="./images/insta.png" alt=""></a>
       </div>
     </nav>
+
+
     <nav class="text-gray-400 text-lg">
       <h6 class="footer-title text-xl">Useful Links</h6>
-      <a class="link link-hover">Home</a>
-      <a class="link link-hover">About Us</a>
-      <a class="link link-hover">Animals</a>
-      <a class="link link-hover">Foundation</a>
-      <a class="link link-hover">Contact</a>
+      <a href="#hero" class="link link-hover">Home</a>
+      <a href="#adopt" class="link link-hover">About Us</a>
+      <a href="#adopt" class="link link-hover">Animals</a>
+      <a href="#adopt" class="link link-hover">Foundation</a>
+      <a href="#footer" class="link link-hover">Contact</a>
     </nav>
 
     <form class="text-gray-400 text-lg">
@@ -217,8 +228,10 @@
           <div>
             <input type="text" placeholder="username@site.com" class="input input-bordered join-item w-full" />
           </div>
-          <button
-            class="btn text-lg bg-[#0E7A81] border-[#0E7A81] text-white hover:text-black join-item w-full">Subscribe</button>
+
+
+          <button class="btn text-lg bg-[#0E7A81] border-[#0E7A81] text-white hover:text-black join-item w-full"><a
+              href="#hero">Subscribe</a></button>
         </div>
       </fieldset>
     </form>
